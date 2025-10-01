@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NeoShop — Order Form</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#134e4a;
+      --accent-gold:#facc15;
+      --accent-emerald:#10b981;
+      --muted:rgba(255,255,255,0.8);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:linear-gradient(120deg,var(--bg1),var(--bg2));
+      color:#f1f5f9;
+      -webkit-font-smoothing:antialiased;
+      padding-top:70px;
+    }
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      padding:15px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;
+      background:rgba(15,23,42,0.9);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    header h1{font-size:22px;font-weight:700;color:var(--accent-gold)}
+    nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;flex:1}
+    nav a{text-decoration:none;color:var(--muted);font-weight:600;transition:color .2s}
+    nav a:hover{color:var(--accent-gold)}
+
+    .form-container{max-width:600px;margin:100px auto;padding:30px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;backdrop-filter:blur(6px)}
+    .form-container h2{text-align:center;color:var(--accent-emerald);margin-bottom:20px}
+    form{display:flex;flex-direction:column;gap:16px}
+    label{font-size:14px;font-weight:600;color:var(--muted)}
+    input,textarea,select{padding:12px;border-radius:10px;border:none;background:rgba(255,255,255,0.1);color:#fff;font-size:14px}
+    input:focus,textarea:focus,select:focus{outline:2px solid var(--accent-gold)}
+    button{padding:14px;border:none;border-radius:12px;background:linear-gradient(90deg,var(--accent-gold),var(--accent-emerald));color:#0f172a;font-weight:800;font-size:15px;cursor:pointer}
+    button:hover{opacity:0.9}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NeoShop</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#featured">Featured</a>
+      <a href="index.html#all">Products</a>
+      <a href="order.html">Order</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Place Your Order</h2>
+    <form action="https://formspree.io/f/mnngdyzd" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" placeholder="Street, City, ZIP" required></textarea>
+
+      <label for="product">Select Product</label>
+      <select id="product" name="product" required>
+        <option value="">-- Choose a Product --</option>
+        <option>Featured Tee 1</option>
+        <option>Featured Tee 2</option>
+        <option>Featured Tee 3</option>
+        <option>Featured Tee 4</option>
+        <option>Featured Tee 5</option>
+        <option>Featured Tee 6</option>
+        <option>Classic Tee 1</option>
+        <option>Classic Tee 2</option>
+        <option>Classic Tee 3</option>
+        <option>Classic Tee 4</option>
+        <option>Classic Tee 5</option>
+        <option>Classic Tee 6</option>
+        <option>OClassic Tee 7</option>
+        <option>Classic Tee 8</option>
+        <option>Classic Tee 9</option>
+        <option>Classic Tee 10</option>
+        <option>Classic Tee 11</option>
+        <option>MClassic Tee 12</option>
+        <option>Classic Tee 13</option>
+        <option>Classic Tee 14</option>
+        <option>Classic Tee 15</option>
+          <option>Classic Tee 16</option>
+            <option>Classic Tee 17</option>
+              <option>Classic Tee 18</option>
+                <option>Classic Tee 19</option>
+      </select>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </div>
+</body>
+</html>
+
+                  

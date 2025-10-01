@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amaan,s Premium</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#134e4a;
+      --accent-gold:#facc15;
+      --accent-emerald:#10b981;
+      --muted:rgba(255,255,255,0.8);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:linear-gradient(120deg,var(--bg1),var(--bg2));
+      color:#f1f5f9;
+      -webkit-font-smoothing:antialiased;
+      padding-top:70px;
+    }
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      padding:15px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;
+      background:rgba(15,23,42,0.9);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      transition:all .3s ease;
+    }
+    header.shrink{
+      padding:8px 20px;
+      background:rgba(15,23,42,0.95);
+      box-shadow:0 4px 12px rgba(0,0,0,0.4);
+    }
+    header h1{font-size:22px;font-weight:700;color:var(--accent-gold);transition:font-size .3s}
+    header.shrink h1{font-size:18px}
+    nav{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;flex:1}
+    nav a{
+      position:relative;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      transition:color .2s;
+      padding-bottom:4px;
+      font-size:14px;
+    }
+    nav a::after{
+      content:'';
+      position:absolute;
+      left:0;bottom:0;
+      width:0%;height:2px;
+      background:var(--accent-gold);
+      transition:width .3s ease;
+    }
+    nav a:hover{color:var(--accent-gold)}
+    nav a:hover::after{width:100%}
+
+    .section{padding:60px 20px}
+    .section h2{text-align:center;font-size:24px;margin-bottom:30px;color:var(--accent-emerald)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:16px;
+      padding:16px;
+      text-align:center;
+      backdrop-filter:blur(6px);
+      transition:transform .3s, box-shadow .3s, opacity .8s ease, transform .8s ease;
+      opacity:0;
+      transform:translateY(30px);
+      height:350px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .card.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+    .card:hover{
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    }
+    .card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:8px}
+    .card h3{font-size:16px;margin-bottom:8px;color:var(--accent-gold)}
+    .card p{font-size:13px;color:var(--muted);margin-bottom:10px}
+    .card a{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:10px;
+      background:linear-gradient(90deg,var(--accent-gold),var(--accent-emerald));
+      color:#0f172a;font-weight:700;text-decoration:none;font-size:14px;
+      transition:all .3s ease;
+    }
+    .card a:hover{opacity:0.9;transform:scale(1.05)}
+
+    /* Contact */
+    #contact .info{
+      max-width:500px;
+      margin:0 auto;
+      background:rgba(255,255,255,0.05);
+      padding:20px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.1);
+      text-align:center;
+    }
+    #contact p{margin:10px 0;font-size:14px;color:var(--muted)}
+
+    footer{
+      margin-top:40px;
+      padding:20px;
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header id="main-header">
+    <h1>AMAAN,S PREMIUM</h1>
+    <nav>
+      <a href="#featured">Featured</a>
+      <a href="#all">Products</a>
+      <a href="order.html">Order</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="featured" class="section">
+    <h2>Featured Products</h2>
+    <div class="grid">
+      <div class="card"><img src="p3.jpg.webp"><h3>1499</h3><p>Featured Tee 1</p><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p4.jpg"><h3>1499</h3><p></p>Featured Tee 2<a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p5.jpg"><h3>1499</h3><p></p>Featured Tee 3<a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p6.jpg"><h3>1499</h3><p>Featured Tee 4</p><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p7.jpg"><h3>1499</h3><p></p>Featured Tee 5 <a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p8.jpg"><h3>1499</h3><p></p>Featured Tee 6<a href="order.html">Buy Now</a></div>
+    </div>
+  </section>
+
+  <section id="all" class="section">
+    <h2>All Products</h2>
+    <div class="grid">
+      <div class="card"><img src="p9.jpg.jpg"><h3>1399 <p>Classic Printed Tee 1</p>
+      </h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p10.jpg"><h3>1399 <p>Classic Printed Tee 2</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p11.webp"><h3>1399 <p>Classic Printed Tee 3</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p12.jpg"><h3>1399 <p>Classic Printed Tee 4</p></h3><a href="order.html">Buy Now</a></div>
+      
+      <div class="card"><img src="p13.jpg"><h3>1399 <p>Classic Printed Tee 5</p></h3><a href="order.html">Buy Now</a></div>
+     
+      <div class="card"><img src="p14.jpg"><h3>1399 <p>Classic Printed Tee 6</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p15.jpg"><h3>1399p
+        Classic Printed Tee 7
+      </h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p16.jpg"><h3>1399 <p>Classic Printed Tee 8</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p17.jpg"><h3>1399 <p>Classic Printed Tee 9</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p18.jpg"><h3>1399 <p>Classic Printed Tee 10</p></h3><a href="order.html">Buy Now</a></div>
+      
+      <div class="card"><img src="p20.jpg.webp"><h3>1399 <p>Classic Printed Tee 11</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p21.jpg"><h3>1399 <p>Classic Printed Tee 12</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p222.jpg"><h3>1399 <p>Classic Printed Tee 13</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p333.webp"><h3>1399 <p>Classic Printed Tee 14</p></h3><a href="order.html">Buy Now</a></div>
+      
+      <div class="card"><img src="p24.jpg"><h3>1399 <p>Classic Printed Tee 15</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p25.jpg"><h3>1399 <p>Classic Printed Tee 16</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p26.jpg"><h3>1399 <p>Classic Printed Tee 17</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p28.webp"><h3>1399 <p>Classic Printed Tee 18</p></h3><a href="order.html">Buy Now</a></div>
+      <div class="card"><img src="p27.jpg"><h3>1399 <p>Classic Printed Tee 19</p></h3><a href="order.html">Buy Now</a></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <div class="info">
+      <p>📱 Phone: +92 314 02832507</p>
+      <p>✉️ Email: ecomerce.iota5@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Amaan,s Premium. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animation for cards
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {threshold:0.2});
+
+    cards.forEach(card => observer.observe(card));
+
+    // Header shrink on scroll
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50){
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
